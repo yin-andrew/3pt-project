@@ -1,0 +1,128 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    fill: white;
+}
+i {
+    fill: white;
+}
+
+.dropdown {
+    /* height: 10vh; */
+    fill: green;
+    display:flex;
+    justify-content: start;
+    align-items: flex-start;
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+    background-color: black;
+}
+.seasons {
+    position: relative;
+}   
+
+.seasons ul {
+    position: absolute;
+    background: black;
+    margin-top: 30px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    /* transform: translateY(-10px); */
+    transition: all 0.4s ease;
+}
+.seasons:hover ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
+
+/* .seasons button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+} */
+
+.dropdown button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    color: green;
+}
+
+#layout {
+    text-align: center;
+}
+
+#container {
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    /* background-color: rgb(48, 86, 127); */
+    background-color: black;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.bar {
+    /* fill:aliceblue; */
+    fill: green;
+
+}
+line {
+    stroke: white;
+}
+path {
+    stroke: white;
+}
+
+.bar:hover {
+    cursor: pointer;
+}
+
+text {
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    /* fill: #fff; */
+    fill: white;
+}
+
+.yLabel {
+    font-size: 14px;
+
+}
+
+text.value {
+    font-size: 14px;
+    fill: white;
+}
+
+text.title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+text.label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
