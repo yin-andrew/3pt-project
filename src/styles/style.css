@@ -1,25 +1,28 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     background-color: black;
+    display: flex;
 }
+
 
 button {
     font-family: 'Courier New', Courier, monospace;
     fill: white;
+    width: 100%;
 }
+
 i {
     fill: white;
 }
 
 .dropdown {
+    border: 2px solid green;
     /* height: 10vh; */
     fill: green;
     display:flex;
-    justify-content: start;
-    align-items: flex-start;
-    margin: auto;
-    margin-top: 30px;
-    width: 90%;
+    justify-content: center;
+    margin-top: 2%;
+    width: 12%;
     background-color: black;
 }
 .seasons {
@@ -28,7 +31,7 @@ i {
 
 .seasons ul {
     position: absolute;
-    background: black;
+    /* background: black; */
     margin-top: 30px;
     width: 200px;
     height: 100px;
@@ -53,6 +56,12 @@ i {
     transform: translateY(0px);
 } */
 
+.season-btn {
+    border: 2px solid white;
+    font-family: 'Courier New', Courier, monospace;
+    fill: white;
+}
+
 .dropdown button {
     background: none;
     border: none;
@@ -65,20 +74,41 @@ i {
     color: green;
 }
 
+.instructions {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-top: 6%;
+}
+
+.instruct-contain {
+    /* border: 1px solid white; */
+    height: fit-content;
+    width: 100%;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+
 #layout {
+    /* border: 2px solid orange; */
+    width: 65%;
     text-align: center;
+    margin-top: 2%;
 }
 
 #container {
-    width: 1000px;
+    width: 950px;
     height: 700px;
     margin: auto;
     /* background-color: rgb(48, 86, 127); */
     background-color: black;
+    
 }
 
 svg {
-    width: 100%;
+    width: 105%;
     height: 100%;
 }
 

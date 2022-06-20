@@ -35,7 +35,6 @@ window.addEventListener("load", ()=> {
         fetchPlayerStats("2018_19");
     });
     let season19 = document.getElementById('19_20');
-    console.log(season19);
     season19.addEventListener("click", function () {
         fetchPlayerStats("2019_20");
     });
