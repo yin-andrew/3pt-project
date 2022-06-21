@@ -16,12 +16,12 @@ i {
 }
 
 .dropdown {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     /* height: 10vh; */
     fill: green;
     display:flex;
-    justify-content: center;
-    margin-top: 2%;
+    justify-content: right;
+    margin-top: 5%;
     width: 12%;
     background-color: black;
 }
@@ -71,15 +71,17 @@ i {
 }
 
 .dropdown button:hover {
-    color: green;
+    color: lightgreen;
 }
 
 .instructions {
     /* border: 1px solid white; */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     width: 20%;
     margin-top: 6%;
+    height: 600px;
 }
 
 .instruct-contain {
@@ -89,6 +91,31 @@ i {
     font-size: 16px;
     background-color: black;
     color: white;
+}
+
+.linkedin {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+.github {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+.linkedin:hover, .github:hover {
+    color: lightgray;
+}
+
+.links-container {
+    display: flex;
+    justify-content: end;
+}
+
+.spacemaker {
+    width: 5%;
 }
 
 #layout {
@@ -117,15 +144,12 @@ svg {
     fill: green;
 
 }
+
 line {
     stroke: white;
 }
 path {
     stroke: white;
-}
-
-.bar:hover {
-    cursor: pointer;
 }
 
 text {
@@ -143,6 +167,7 @@ text {
 text.value {
     font-size: 14px;
     fill: white;
+    z-index: -1;
 }
 
 text.title {
@@ -155,4 +180,12 @@ text.label {
     font-weight: 600;
 }
 
-
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 12px;
+    background: white;
+    color: black;
+    border-radius: 2px;
+  }

@@ -1,5 +1,12 @@
 import { fetchPlayerStats } from "./fetchdata.js";
-import * as d3 from 'd3';
+// import * as d3 from 'd3';
+// import d3tip from 'd3-tip';
+import * as d3module from 'd3'
+import d3tip from 'd3-tip'
+const d3 = {
+  ...d3module,
+  tip: d3tip
+}
 
 document.addEventListener("DOMContentLoaded", ()=> {
     console.log("loaded");
@@ -75,6 +82,13 @@ export function createGraph(players, domainMax) {
             .attr("dx", "-.8em")
             .attr("dy", ".15em")
             .attr("transform", "rotate(-45)" );
+
+    let tip = d3.tip().attr('class', 'd3-tip').offset([-15, 0]).html(function(d) { 
+        return "3pt Percentage: " + Math.round(d.srcElement.__data__.fg3_pct*100) +"%"  
+    });
+
+    svg.call(tip);
+    // console.log("this is data", d.srcElement.__data__.fg3_pct);
     //append rectangle for every element of the array
 
     
@@ -89,6 +103,7 @@ export function createGraph(players, domainMax) {
         .attr('height', el=> height - yScale(0))
         .attr('y', el=> yScale(0))
         .on('mouseenter', function () {
+            tip.show;
             d3.select(this)
                 .transition()
                 .duration(300)
@@ -98,6 +113,7 @@ export function createGraph(players, domainMax) {
             
         })
         .on('mouseleave', function () {
+            tip.hide;
             d3.select(this)
                 .transition()
                 .duration(300)
@@ -105,20 +121,21 @@ export function createGraph(players, domainMax) {
                 .attr('x', el => xScale(el.name))
                 .attr('width', xScale.bandwidth())
         })
-        .on('click', function () {
-            console.log('more info coming soon');
-        })
-        // .append('div')
-        //     .attr('class', )
-        //     .style('position', 'absolute')
-        //     .style('visibility', 'hidden')
-        //     .text(el=> {
-        //         `name: ${el.name}
-        //         team: ${el.team_abbreviations}
-        //         3 pointers made: ${el.fg3m}
-        //         3 pt percentage: ${el.fg3_pct}`
-        //     })
-        // .on("mouseover", function () {return })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
+
+        // .enter()
+        //     .append('div')
+        //         .attr('class', )
+        //         .style('position', 'absolute')
+        //         .style('visibility', 'hidden')
+        //         .text(el=> {
+        //             `name: ${el.name}
+        //             team: ${el.team_abbreviations}
+        //             3 pointers made: ${el.fg3m}
+        //             3 pt percentage: ${el.fg3_pct}`
+        //         })
+        //     .on("mouseover", function () {return })
 
 
     graph.selectAll()
@@ -165,8 +182,10 @@ export function createGraph(players, domainMax) {
         .attr('height', el => height - yScale(el.fg3m))
         // .delay((d,i) => {console.log(i); return(i*100)})
     
-    
-    
+
+
+        
+
     
     // graph.on('mouseenter', function(actual, i) {
     //     d3.select(this).attr('opacity',0.5)
