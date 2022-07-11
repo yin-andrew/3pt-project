@@ -8,7 +8,7 @@ The 3pt project is a data visualization of the three point shot in the National 
 
 * User can select NBA seasons from which they would like to view statistics
 * User can mouseover graph for additional player info
-* 
+
 ### Architecture and Technologies ###
 
 * Vanilla JavaScript for overall structure and logic
